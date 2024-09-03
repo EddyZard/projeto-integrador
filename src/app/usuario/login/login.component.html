@@ -1,0 +1,61 @@
+
+<mat-card class="Login">
+  <mat-card-content >
+
+
+    <h1 class="titulo">BEM-VINDO(A) DE VOLTA!</h1>
+
+
+    <h5>EMAIL OU NOME DO PERFIL</h5>
+    <!-- Campo de email -->
+    <div class="caixa-input">
+      <mat-form-field>
+        <mat-label>Insira seu email</mat-label>
+        <input matInput
+               placeholder="nome@exemplo.com"
+               [formControl]="email"
+               (blur)="updateErrorMessage()"
+               required>
+        @if (email.invalid) {
+          <mat-error>{{errorMessage}}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <!-- FIM Campo de email -->
+
+
+    <h5>SENHA</h5>
+    <!-- Campo de senha -->
+    <div class="caixa-input">
+      <mat-form-field>
+        <mat-label>Insira a sua senha</mat-label>
+        <input matInput
+               [type]="hide ? 'password' : 'text'"
+               [formControl]="password"
+               (blur)="updateErrorMessage()"
+               required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        @if (password.invalid) {
+          <mat-error>{{errorMessage}}</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <!-- FIM Campo de senha -->
+
+
+    <!-- Link "Esqueceu a sua senha?" -->
+    <a href="">Esqueceu a sua senha?</a>
+    <!-- FIM Link "Esqueceu a sua senha?" -->
+
+    <br>
+
+    <!-- Botão Entrar -->
+    <button mat-raised-button color="primary">Entrar</button>
+    <!-- FIM Botão Entrar -->
+
+  </mat-card-content>
+</mat-card>
+
+

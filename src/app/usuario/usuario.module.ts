@@ -6,11 +6,16 @@ import {MatCard, MatCardContent} from "@angular/material/card";
 import {MatFormField} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatIcon} from "@angular/material/icon";
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 @NgModule({
   declarations: [
 
+  
+    CadastroComponent,
+         PerfilComponent
   ],
   imports: [
     CommonModule,

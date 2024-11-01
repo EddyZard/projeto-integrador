@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { CadastroComponent } from './cadastro/cadastro.component';
-import { AdicionarComponent } from './composicao/amostra/adicionar/adicionar.component';
+import { CadastroComponent } from './usuario/cadastro/cadastro.component';
+import { AdicionarComponent } from './comparacao/amostra/adicionar/adicionar.component';
 
 @NgModule({
   declarations: [

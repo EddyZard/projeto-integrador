@@ -2,11 +2,9 @@ import { Component } from '@angular/core';
 import {MatIcon} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCard, MatCardContent} from "@angular/material/card";
-import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {merge} from 'rxjs';
 
 @Component({
   selector: 'app-login',

@@ -29,47 +29,11 @@ export class LoginComponent {
 
   _hide: boolean | undefined;
 
-  /*SENHA*/
-  password = new FormControl ('', [Validators.required]);
-
 
   /*EMAIL*/
-  email = new FormControl('', [Validators.required, Validators.email]);
-
-  errorMessage = '';
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
 
-  constructor() {
-    /*CONTRUTOR EMAIL*/
-    merge(this.email.statusChanges, this.email.valueChanges)
-      .pipe(takeUntilDestroyed())
-      .subscribe(() => this.updateErrorMessage());
+  constructor() {}
 
-    /*CONTRUTOR SENHA*/
-    merge(this.password.statusChanges, this.password.valueChanges)
-      .pipe(takeUntilDestroyed())
-      .subscribe(() => this.updateErrorMessage());
-  }
-
-
-
-  updateErrorMessage() {
-    /*ERRO EMAIL*/
-    if (this.email.hasError('required')) {
-      this.errorMessage = 'Você precisa inserir um email';
-    } else if (this.email.hasError('email')) {
-      this.errorMessage = 'Email Inválido';
-    } else {
-      this.errorMessage = '';
-    }
-
-    /*ERRO SENHA*/
-    if (this.password.hasError('required')) {
-      this.errorMessage = 'Você precisa preencher o campo';
-    } else if (this.password.hasError('password')) {
-      this.errorMessage = 'Conteúdo Inválida';
-    } else {
-      this.errorMessage = '';
-    }
-  }
 }

@@ -8,18 +8,18 @@
       <h5>EMAIL OU NOME DO PERFIL</h5>
       <!-- Campo de email -->
       <div class="caixa-input">
-        <mat-form-field>
-          <mat-label>Insira o seu email</mat-label>
-          <input matInput
-                 placeholder="nome@exemplo.com"
-                 [formControl]="email"
-                 (blur)="updateErrorMessage()"
-                 required
-                 class="formatarInput">
-          @if (email.invalid) {
-            <mat-error>{{errorMessage}}</mat-error>
-          }
-        </mat-form-field>
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Insira o seu Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+            @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+              <mat-error>Por favor insira um email válido</mat-error>
+            }
+            @if (emailFormControl.hasError('required')) {
+              <mat-error>Email é <strong>obrigatório</strong></mat-error>
+            }
+          </mat-form-field>
+        </form>
       </div>
 
       <!-- FIM Campo de email -->
@@ -28,19 +28,13 @@
       <!-- Campo de senha -->
       <div class="caixa-input">
         <mat-form-field>
-          <mat-label>Insira a sua senha</mat-label>
+          <mat-label>Insira a sua Senha</mat-label>
           <input matInput
                  [type]="hide ? 'password' : 'text'"
-                 [formControl]="password"
-                 (blur)="updateErrorMessage()"
-                 required
                  class="formatarInput">
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
-          @if (password.invalid) {
-            <mat-error>{{errorMessage}}</mat-error>
-          }
         </mat-form-field>
       </div>
       <!-- FIM Campo de senha -->

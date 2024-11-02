@@ -27,8 +27,11 @@ export class LoginComponent {
 
   _hide: boolean | undefined;
 
+
+  /*EMAIL*/
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
-  constructor() {}
-}
 
+  constructor() {}
+
+}

@@ -6,9 +6,10 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatCardModule } from '@angular/material/card';
 import { LoginComponent } from './login/login.component';
+
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { LoginComponent } from './login/login.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatCardModule,
-    LoginComponent
+    LoginComponent,
+    FormControl,
+    FormsModule
   ]
 })
 export class UsuarioModule { }

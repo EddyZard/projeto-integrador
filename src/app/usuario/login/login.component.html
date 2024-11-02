@@ -8,12 +8,12 @@
       <h5>EMAIL OU NOME DO PERFIL</h5>
       <!-- Campo de email -->
       <div class="caixa-input">
-        <form class="example-form">
-          <mat-form-field class="example-full-width">
+        <form>
+          <mat-form-field>
             <mat-label>Insira o seu Email</mat-label>
             <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
             @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
-              <mat-error>Por favor insira um email válido</mat-error>
+              <mat-error>Por favor, insira um email válido</mat-error>
             }
             @if (emailFormControl.hasError('required')) {
               <mat-error>Email é <strong>obrigatório</strong></mat-error>
@@ -21,17 +21,18 @@
           </mat-form-field>
         </form>
       </div>
-
       <!-- FIM Campo de email -->
+
 
       <h5>SENHA</h5>
       <!-- Campo de senha -->
       <div class="caixa-input">
         <mat-form-field>
           <mat-label>Insira a sua Senha</mat-label>
-          <input matInput
-                 [type]="hide ? 'password' : 'text'"
-                 class="formatarInput">
+          <input [formControl]="passwordFormControl" [type]="hide ? 'password' : 'text'" class="formatarInput" matInput type="password">
+          @if (passwordFormControl.hasError('required')) {
+            <mat-error>Senha é <strong>obrigatória</strong></mat-error>
+          }
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </button>
